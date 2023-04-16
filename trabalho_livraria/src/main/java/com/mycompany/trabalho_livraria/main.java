@@ -1,5 +1,7 @@
 package com.mycompany.trabalho_livraria;
 
+import com.mycompany.trabalho_livraria.model.Clientes;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -9,7 +11,10 @@ import javax.swing.JOptionPane;
 public class main {
 
     public static void main(String[] args) {
-     
+        ArrayList<Clientes> listaClientes = new ArrayList<>();
+        
+        
+        
 //        Realizar a codificação do exercício e enviar os projeto para correção. 
 //        Os projetos devem possuir todas as classes com construtores contendo todos 
 //        os atributos e um construtor vazio, getters e setters. Na classe principal (Main) 
@@ -37,29 +42,69 @@ public class main {
             String opcao;
             int opcaoo;
             
-            opcao = JOptionPane.showInputDialog("Selecione uma opção: \n1- Cadastrar Cliente \n2- Cadastrar Livro \n3- Efetuar Venda");
+            opcao = JOptionPane.showInputDialog("Selecione uma opção: \n1- Cliente \n2- Cadastrar Livro \n3- Efetuar Venda");
             opcaoo = Integer.parseInt(opcao);
             
             switch (opcaoo){
                 case (1):
-                    JOptionPane.showMessageDialog(null,"Opção selecionada CADASTRAR CLIENTE");
+            String escolha;
+            int escolhaa;
+             
+            escolha = JOptionPane.showInputDialog("Por favor informe a opção que gostaria: \n1- Cadastrar cliente "
+                            + "\n2- Atualizar cadastros do cliente");
+            escolhaa = Integer.parseInt(escolha);       
                     
-                    break;
-                case (2):
-                    JOptionPane.showMessageDialog(null, "Opção selecionada CADASTRAR LIVRO");
-                    break;
-                case (3):
-                    JOptionPane.showMessageDialog(null, "Opção selecionada EFETUAR VENDA");
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null,"Opção Inválida");
-                    break;
+                if (escolhaa == 1){
+                   Clientes cliente = new Clientes();
+
+                      JOptionPane.showMessageDialog(null,"Opção selecionada CADASTRAR CLIENTE");
+                      String nome = JOptionPane.showInputDialog(null,"Por favor informe o nome do cliente: ");
+                      String cpf  = JOptionPane.showInputDialog("Informe o Cpf: ");
+                      String nrtelefone = JOptionPane.showInputDialog("Informe o número de telefone: ");
+                      String dtnascimento = JOptionPane.showInputDialog("Informe a data de nascimento: ");
+
+                      cliente.setNome(nome);
+                      cliente.setCpf(cpf);
+                      cliente.setDtNascimento(dtnascimento);
+                      cliente.setNrTelefone(nrtelefone);
+                      listaClientes.add(cliente); 
+                      
+                      break;
+                }else if (escolhaa == 2){
+                 JOptionPane.showMessageDialog(null,"Opção selecionada ATUALIZAR CADASTROS DO CLIENTE");
+                 String cpf = JOptionPane.showInputDialog("Informe o CPF do cliente que gostaria de atualizar: ");
+                 
+                 // Procurar na lista de clientes existentes um cliente com o CPF fornecido pelo usuário
+                 boolean encontraCliente = false;
+                 for(Clientes cliente : listaClientes){
+                     if(cliente.getCpf().equals(cpf)){
+                         encontraCliente = true;
+                     
+                      String nome = JOptionPane.showInputDialog(null,"Por favor informe o novo nome do cliente: ");
+                      String cpff  = JOptionPane.showInputDialog("Informe o novo Cpf: ");
+                      String nrtelefone = JOptionPane.showInputDialog("Informe o novo número de telefone: ");
+                      String dtnascimento = JOptionPane.showInputDialog("Informe a nova data de nascimento: ");
+
+                      cliente.setNome(nome);
+                      cliente.setCpf(cpff);
+                      cliente.setDtNascimento(dtnascimento);
+                      cliente.setNrTelefone(nrtelefone);
+                     
+                 }
+                 
+                  
+                 
+                }
                     
-            }   
+                            
+           }
+        }  
+    }
+ }
+            
           
         
         
         
         
-    }
-}
+
