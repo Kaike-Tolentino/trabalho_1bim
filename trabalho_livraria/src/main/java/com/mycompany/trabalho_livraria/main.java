@@ -62,11 +62,22 @@ public class main {
                       String cpf  = JOptionPane.showInputDialog("Informe o Cpf: ");
                       String nrtelefone = JOptionPane.showInputDialog("Informe o número de telefone: ");
                       String dtnascimento = JOptionPane.showInputDialog("Informe a data de nascimento: ");
+                      String rua = JOptionPane.showInputDialog("Informe a sua rua: ");
+                      String numero = JOptionPane.showInputDialog("Informe o numero da sua casa: ");
+                      int numeroInt = Integer.parseInt(numero);
+                      String bairro = JOptionPane.showInputDialog("Informe o seu bairro: ");
+                      String estado = JOptionPane.showInputDialog("Informe o seu estado: ");
+                      String pais = JOptionPane.showInputDialog("Informe o seu pais: ");
+                      
 
                       cliente.setNome(nome);
                       cliente.setCpf(cpf);
                       cliente.setDtNascimento(dtnascimento);
                       cliente.setNrTelefone(nrtelefone);
+                      cliente.setRua(rua);
+                      cliente.setNumero(numeroInt);
+                      cliente.setBairro(bairro);
+                      cliente.setUf(estado);
                       listaClientes.add(cliente); 
                       
                       break;
