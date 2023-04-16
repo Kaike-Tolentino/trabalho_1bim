@@ -38,7 +38,9 @@ public class main {
 //          Ao finalizar a venda o cliente poderá utilizar uma ou mais formas de pagamento e para cada uma delas Anderson 
 //          precisa saber qual foi o valor pago nesta venda.
 //          Após a realização da venda a Quantidade em estoque do Item deve ser decrescida de acordo com a quantidade vendida.
-
+            int liga = 1;
+            
+            do{
             String opcao;
             int opcaoo;
             
@@ -86,32 +88,64 @@ public class main {
                  String cpf = JOptionPane.showInputDialog("Informe o CPF do cliente que gostaria de atualizar: ");
                  
                  // Procurar na lista de clientes existentes um cliente com o CPF fornecido pelo usuário
+                
                  boolean encontraCliente = false;
                  for(Clientes cliente : listaClientes){
                      if(cliente.getCpf().equals(cpf)){
                          encontraCliente = true;
-                     
-                      String nome = JOptionPane.showInputDialog(null,"Por favor informe o novo nome do cliente: ");
-                      String cpff  = JOptionPane.showInputDialog("Informe o novo Cpf: ");
-                      String nrtelefone = JOptionPane.showInputDialog("Informe o novo número de telefone: ");
-                      String dtnascimento = JOptionPane.showInputDialog("Informe a nova data de nascimento: ");
+                        
+                         int atualiza = 0; 
+                       
+                         
+                         do{
+                        String seleciona;
+                        int selecionaa;
+                        
+                        seleciona = JOptionPane.showInputDialog("Gostaria de alterar qual informação? "
+                                                    + "\n1- Nome"
+                                                    + "\n2- Nº Telefone"
+                                                    + "\n3- Dt. Nascimento");
+                        selecionaa = Integer.parseInt(seleciona);
+                      
+                        switch(selecionaa){
+                            case(1):
+                            String nome = JOptionPane.showInputDialog(null,"Por favor informe o novo nome do cliente: "); 
+                            cliente.setNome(nome);
+                            break;
+                            case(2):   
+                            String nrtelefone = JOptionPane.showInputDialog("Informe o novo número de telefone: ");
+                            cliente.setNrTelefone(nrtelefone);
+                            break;
+                            case(3):
+                            String dtnascimento = JOptionPane.showInputDialog("Informe a nova data de nascimento: ");    
+                            break;
+                      
 
-                      cliente.setNome(nome);
-                      cliente.setCpf(cpff);
-                      cliente.setDtNascimento(dtnascimento);
-                      cliente.setNrTelefone(nrtelefone);
+                      
+                      
+                      
                      
-                 }
+                        } 
+                     atualiza = Integer.parseInt(JOptionPane.showInputDialog("Gostaria de realizar outra operação? "
+                                                                + "\n0- Sim"
+                                                                + "\n1- Não"));
+                     }while(atualiza !=1);
+                }
                  
                   
                  
                 }
                     
                             
-           }
-        }  
+                }
+          }
+                System.out.println(listaClientes);
+          liga =Integer.parseInt(JOptionPane.showInputDialog("Gostaria de realizar outra operação? "
+                                                                + "\n1- Sim"
+                                                                + "\n0- Não"));
+        }while(liga != 0); 
     }
- }
+}
             
           
         
