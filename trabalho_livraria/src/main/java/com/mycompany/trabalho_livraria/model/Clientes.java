@@ -12,9 +12,8 @@ public class Clientes extends Endereco{
     private String nrTelefone;
     
     
-    //Construtores
+   
     public Clientes(){
-        
     }
     
     public Clientes (String nome, String cpf, String dtNascimento,
@@ -29,7 +28,7 @@ public class Clientes extends Endereco{
        
     }
 
-    //Getters e Setters
+   
 
     public String getNome() {
         return nome;
@@ -63,7 +62,7 @@ public class Clientes extends Endereco{
         this.nrTelefone = nrTelefone;
     }
  
-    //toString
+   
 
     @Override
     public String toString() {

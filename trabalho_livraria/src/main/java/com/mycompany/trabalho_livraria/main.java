@@ -60,7 +60,7 @@ public class main {
                    Clientes cliente = new Clientes();
 
                       JOptionPane.showMessageDialog(null,"Opção selecionada CADASTRAR CLIENTE");
-                      String nome = JOptionPane.showInputDialog(null,"Por favor informe o nome do cliente: ");
+                      String nome = JOptionPane.showInputDialog("Por favor informe o nome do cliente: ");
                       String cpf  = JOptionPane.showInputDialog("Informe o Cpf: ");
                       String nrtelefone = JOptionPane.showInputDialog("Informe o número de telefone: ");
                       String dtnascimento = JOptionPane.showInputDialog("Informe a data de nascimento: ");
@@ -126,9 +126,8 @@ public class main {
                       
                      
                         } 
-                     atualiza = Integer.parseInt(JOptionPane.showInputDialog("Gostaria de realizar outra operação? "
-                                                                + "\n0- Sim"
-                                                                + "\n1- Não"));
+                     atualiza = Integer.parseInt(JOptionPane.showInputDialog("Gostaria de realizar outra operação de cadastro? "      
+                                                                + "\n0- Não"+ "\n1- Sim"));
                      }while(atualiza !=1);
                 }
                  
@@ -140,7 +139,7 @@ public class main {
                 }
           }
                 System.out.println(listaClientes);
-          liga =Integer.parseInt(JOptionPane.showInputDialog("Gostaria de realizar outra operação? "
+          liga=Integer.parseInt(JOptionPane.showInputDialog("Gostaria de realizar outra operação? "
                                                                 + "\n1- Sim"
                                                                 + "\n0- Não"));
         }while(liga != 0); 

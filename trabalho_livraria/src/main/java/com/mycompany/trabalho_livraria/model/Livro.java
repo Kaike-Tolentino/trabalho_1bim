@@ -2,10 +2,6 @@ package com.mycompany.trabalho_livraria.model;
 
 import java.util.List;
 
-/**
- *
- * @author caina
- */
 public class Livro{
     
     private int idLivro;
